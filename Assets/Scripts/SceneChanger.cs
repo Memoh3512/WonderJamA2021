@@ -6,10 +6,8 @@ using UnityEngine.SceneManagement;
 public enum SceneTypes
 {
     
-    MainMenu = 0,
-    Options = 1,
-    PlayerJoin = 2,
-    GameplayScene = 3,
+    PlayerJoin = 0,
+    GameplayScene = 1,
     
 }
 
