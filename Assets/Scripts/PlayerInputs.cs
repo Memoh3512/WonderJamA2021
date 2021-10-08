@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 public static class PlayerInputs
 {
     
-    public const int MAX_PLAYERS = 4;
+    public const int MAX_PLAYERS = 1;
 
     public static Manette[] pControllers = new Manette[MAX_PLAYERS];
     private static int playerAdded = 0;
