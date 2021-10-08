@@ -57,8 +57,13 @@ public class PlayerEntry : MonoBehaviour
 
             if (man.joinButton.wasPressedThisFrame && (!PlayerInputs.pControllers.Contains(man)))
             {
-                man.Rumble(1f, RumbleForce.Max);
+                man.Rumble(0.5f, RumbleForce.Medium);
                 PlayerInputs.AddPlayerController(man);
+                
+                //press begin start game
+                //TODO HERE
+                Debug.Log("START GAME");
+                SceneChanger.ChangeScene(SceneTypes.GameplayScene, TransitionTypes.CrossFade);
                 
             }
             

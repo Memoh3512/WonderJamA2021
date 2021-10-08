@@ -51,6 +51,7 @@ public class PlayerJoinTester : MonoBehaviour
                 
                 GameObject.Find("BlinkText").GetComponent<Animator>().SetTrigger("Appear");
                 if (pressStartText != null) pressStartText.gameObject.SetActive(false);
+                
 
             }   
             
@@ -69,7 +70,7 @@ public class PlayerJoinTester : MonoBehaviour
                     {
                         
                         PlayerInputs.GetPlayerController(i).Rumble(0.1f);
-                        
+
                     }
                     
                 }
