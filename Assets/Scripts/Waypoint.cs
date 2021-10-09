@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class Waypoint : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float speed;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        if(speed == 0)
+        {
+            speed = 1;
+        }
     }
 }

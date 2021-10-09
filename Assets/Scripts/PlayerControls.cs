@@ -14,10 +14,18 @@ public class PlayerControls : MonoBehaviour
 
     public bool lockMovement = false;
 
+    private void Awake()
+    {
+        
+        GetPlayerGamepad();   
+        
+    }
+
     private void Start()
     {
+        
         rb = GetComponent<Rigidbody2D>();
-        GetPlayerGamepad();
+        
     }
 
     public void GetPlayerGamepad()

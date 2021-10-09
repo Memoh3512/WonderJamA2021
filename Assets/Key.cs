@@ -14,10 +14,13 @@ public class Key : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void Interact()
+    public void Interact(GameObject player)
     {
         UnlockDoor();
         GetKey();
+
+        player.GetComponent<PlayerControls>().lockMovement = false;
+
     }
 
     void UnlockDoor()
@@ -28,5 +31,6 @@ public class Key : MonoBehaviour
     void GetKey()
     {
         GameObject.Find("UIText").GetComponent<UIText>().DisplayText(popUpText);
+        Destroy(gameObject);
     }
 }
