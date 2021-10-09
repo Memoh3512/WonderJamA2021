@@ -262,7 +262,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6397d09e20f8c1c4f834864b90edfdb7, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e852b40dc5975cf479b659ca5f1d02ef, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -362,7 +362,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   source1: {fileID: 116784521}
   source2: {fileID: 116784520}
-  globalVolume: 0
+  globalVolume: 1
 --- !u!4 &116784523
 Transform:
   m_ObjectHideFlags: 0
@@ -2560,7 +2560,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press Select/Backspace to begin
+  m_text: Press Start/Space to begin
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

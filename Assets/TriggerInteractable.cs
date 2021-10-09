@@ -22,7 +22,8 @@ public class TriggerInteractable : MonoBehaviour
                 
                 onInteract.Invoke(ply);
                 Debug.Log("INTERACTED!!!!");
-                
+                interacted = true;
+
             }
             
         }
