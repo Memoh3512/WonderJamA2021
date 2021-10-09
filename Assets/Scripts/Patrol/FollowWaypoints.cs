@@ -9,7 +9,10 @@ public class FollowWaypoints : MonoBehaviour
     private List<Transform> waypoints;
     private int targetIndex;
     private Transform target;
+    private SpriteRenderer sR;
+    private Transform kid;
 
+    public bool patrol;
     public bool Lookdown;
     public bool backtracking;
     int direction;
@@ -18,6 +21,8 @@ public class FollowWaypoints : MonoBehaviour
     public float lookSpeed;
     void Start()
     {
+        kid = transform.GetChild(0);
+        sR = GetComponent<SpriteRenderer>();
         GetAllWaypoints();
         targetIndex = -1;
         direction = 1;
@@ -56,7 +61,7 @@ public class FollowWaypoints : MonoBehaviour
                 targetIndex += direction;
 
             }
-
+          
 
         }
         else
@@ -112,9 +117,26 @@ public class FollowWaypoints : MonoBehaviour
 
     void LookTowards()
     {
+       
         Vector2 between = target.position - transform.position;
-
+        if (patrol)
+        {
+            if (between.x < 0)
+            {
+                sR.flipX = true;
+                between = -between;
+                if(kid.transform.localRotation.z == 0)
+                transform.GetChild(0).transform.Rotate(new Vector3(0,0,180)) ;
+            }
+            else
+            {
+                sR.flipX = false;
+                if (kid.transform.localRotation.z != 0)
+                    transform.GetChild(0).transform.Rotate(new Vector3(0, 0, -180));
+            }
+        }
         transform.right = Vector2.MoveTowards(transform.right, between, lookSpeed * Time.deltaTime);
+
     }
 
     public void PlayerSeen()
