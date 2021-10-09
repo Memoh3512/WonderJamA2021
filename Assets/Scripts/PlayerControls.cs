@@ -39,7 +39,7 @@ public class PlayerControls : MonoBehaviour
     {
         
         var position = transform.position;
-        rb.MovePosition(new Vector2(position.x,position.y)+(manette.leftStick*Time.deltaTime*speed));
+        rb.MovePosition(new Vector2(position.x,position.y)+(manette.leftStick * (Time.deltaTime * speed)));
 
     }
 

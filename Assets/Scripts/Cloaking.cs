@@ -9,10 +9,19 @@ public class Cloaking : MonoBehaviour
     private bool cloakToggled;
     private PlayerControls pC;
     private SpriteRenderer sR;
+
+    public void UnlockCloak()
+    {
+        
+        
+        
+    }
+    
     // Start is called before the first frame update
     void Start()
     {
         cloakToggled = false;
+        chargesLeft = 2;
         sR = GetComponent<SpriteRenderer>();
         pC = GetComponent<PlayerControls>();
     }
@@ -43,6 +52,7 @@ public class Cloaking : MonoBehaviour
         cloakToggled = true;
         pC.lockMovement = true;
         sR.color = new Color(sR.color.r, sR.color.g, sR.color.b, 0.49f);
+        yield return null;
         while (!pC.GetManette().bButton.wasPressedThisFrame)
         {
             yield return null;
