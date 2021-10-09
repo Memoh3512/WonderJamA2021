@@ -24,7 +24,8 @@ public class PlayerControls : MonoBehaviour
     {
 
         manette = PlayerInputs.GetPlayerController(0);
-        if (manette is null) manette = new Manette(Gamepad.current);
+        if (Gamepad.current is null) manette = new Manette();
+        else manette = new Manette(Gamepad.current);
 
     }
     
