@@ -12,7 +12,7 @@ public class PlayerControls : MonoBehaviour
     private Rigidbody2D rb;
     public float speed = 1f;
 
-    private bool lockMovement = false;
+    public bool lockMovement = false;
 
     private void Start()
     {
