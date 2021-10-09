@@ -124,6 +124,99 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &107067543
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 107067544}
+  - component: {fileID: 107067545}
+  m_Layer: 0
+  m_Name: CollisionMap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &107067544
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107067543}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &107067545
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107067543}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -18.020695, y: 0.0058062077}
+      - {x: -18.008776, y: 6.071584}
+      - {x: 3.0143332, y: 6.121624}
+      - {x: 2.961525, y: 17.99768}
+      - {x: -15.004215, y: 18.007658}
+      - {x: -32.101482, y: -5.2844176}
+      - {x: -10.294335, y: -2.2947135}
+      - {x: -3.0967417, y: -2.413569}
+      - {x: -0.7612972, y: -12.395657}
+      - {x: 12.180855, y: -12.403779}
+      - {x: 54.351418, y: 8.185188}
+      - {x: 55.92102, y: 21.140186}
+      - {x: 29.07028, y: 50.59831}
+      - {x: -34.0189, y: 43.17813}
+      - {x: -15.004941, y: 18.007057}
+      - {x: -14.998937, y: 36.07204}
+      - {x: -3.0026479, y: 36.073067}
+      - {x: -3.024434, y: 38.992027}
+      - {x: 3.001702, y: 39.075012}
+      - {x: 2.9946573, y: 36.04542}
+      - {x: 27.002146, y: 36.071857}
+      - {x: 26.981268, y: 15.03552}
+      - {x: 34.854385, y: 15.085561}
+      - {x: 48.00073, y: 15.080268}
+      - {x: 48.06712, y: 8.904927}
+      - {x: 20.94953, y: 8.930146}
+      - {x: 21.000835, y: 29.994652}
+      - {x: -9.004811, y: 29.986103}
+      - {x: -9.004811, y: 29.8255}
+      - {x: -8.997183, y: 24.176056}
+      - {x: -8.997183, y: 24.055859}
+      - {x: 15.00595, y: 24.081297}
+      - {x: 15.069268, y: 18.02145}
+      - {x: 9.002195, y: 17.996279}
+      - {x: 9.026181, y: -8.953928}
+      - {x: 3.0053635, y: -8.994712}
+      - {x: 2.9964688, y: -0.0029491186}
 --- !u!1 &116633013
 GameObject:
   m_ObjectHideFlags: 0
@@ -3326,7 +3419,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1449147388}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 5
+    OrthographicSize: 7
     NearClipPlane: 0.001
     FarClipPlane: 1000
     Dutch: 0
@@ -3854,7 +3947,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
