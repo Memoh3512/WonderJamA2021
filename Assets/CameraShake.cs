@@ -30,9 +30,14 @@ public class CameraShake : MonoBehaviour
     public void ShakeCam(float time, float amp, float freq, RumbleForce force = RumbleForce.Medium)
     {
 
-        Manette manTemp = new Manette(Gamepad.current);
-        manTemp.Rumble(time, force);
-        StartCoroutine(ShakeCamCor(time, amp, freq));
+        if (Gamepad.current != null)
+        {
+            
+            Manette manTemp = new Manette(Gamepad.current);
+            manTemp.Rumble(time, force);
+            StartCoroutine(ShakeCamCor(time, amp, freq));   
+            
+        }
 
     }
 
