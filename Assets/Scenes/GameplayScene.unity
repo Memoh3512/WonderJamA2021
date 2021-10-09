@@ -134,6 +134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 126034146}
   - component: {fileID: 126034147}
+  - component: {fileID: 126034148}
   m_Layer: 0
   m_Name: BoitePanneauDroite
   m_TagString: Untagged
@@ -206,6 +207,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &126034148
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126034145}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &222433834
 GameObject:
   m_ObjectHideFlags: 3
@@ -952,6 +972,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1449147387}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1449147389 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -8476953703607497813, guid: 2c2bad59297c18047b828e7ce87b43c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1449147387}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6417bc772d123ab4f957a3265d451b0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1485085541
 GameObject:
   m_ObjectHideFlags: 0
@@ -962,6 +994,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1485085542}
   - component: {fileID: 1485085543}
+  - component: {fileID: 1485085544}
   m_Layer: 0
   m_Name: BoitePanneauGauche
   m_TagString: Untagged
@@ -1034,6 +1067,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1485085544
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1485085541}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1881181569
 GameObject:
   m_ObjectHideFlags: 0
@@ -1153,12 +1205,12 @@ PrefabInstance:
     - target: {fileID: 6442709334992458135, guid: ca87b3c753938bc4dac39c6c884bcf44,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.38
+      value: 4.372
       objectReference: {fileID: 0}
     - target: {fileID: 6442709334992458135, guid: ca87b3c753938bc4dac39c6c884bcf44,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.49
+      value: 1.482
       objectReference: {fileID: 0}
     - target: {fileID: 6442709334992458135, guid: ca87b3c753938bc4dac39c6c884bcf44,
         type: 3}
@@ -1223,10 +1275,8 @@ PlayableDirector:
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
-  - key: {fileID: 3407747379442539866, guid: 12e145912d22500418081880886af7a6, type: 2}
-    value: {fileID: 1218355416}
-  - key: {fileID: 2481425087446712348, guid: 12e145912d22500418081880886af7a6, type: 2}
-    value: {fileID: 6442709334410738569}
+  - key: {fileID: 8884829858064316465, guid: 12e145912d22500418081880886af7a6, type: 2}
+    value: {fileID: 126034148}
   m_ExposedReferences:
     m_References: []
 --- !u!114 &6442709334410738568
@@ -1241,6 +1291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2555dd58ca3fcd64a9f3ed8216c7108d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timelines: []
 --- !u!95 &6442709334410738569
 Animator:
   serializedVersion: 3
@@ -1275,12 +1326,30 @@ MonoBehaviour:
   onSucceed:
     m_PersistentCalls:
       m_Calls: []
-  boutonToPress: 0
-  timeToPress: 0
-  player: {fileID: 0}
+  boutonToPress: 2
+  timeToPress: 2
+  player: {fileID: 1449147389}
 --- !u!4 &6442709334410738571 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6442709334992458135, guid: ca87b3c753938bc4dac39c6c884bcf44,
     type: 3}
   m_PrefabInstance: {fileID: 6442709334410738565}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6442709334410738572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6442709334410738566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce5080db8549ebe4db6e7ba98f3101b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onSucceed:
+    m_PersistentCalls:
+      m_Calls: []
+  boutonToPress: 3
+  timeToPress: 2
+  player: {fileID: 1449147389}
