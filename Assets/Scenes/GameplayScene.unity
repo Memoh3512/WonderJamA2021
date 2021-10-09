@@ -1125,18 +1125,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1449147387}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1449147389 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -8476953703607497813, guid: 2c2bad59297c18047b828e7ce87b43c2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1449147387}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6417bc772d123ab4f957a3265d451b0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1485085541
 GameObject:
   m_ObjectHideFlags: 0
@@ -1359,6 +1347,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2114356582 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5011906022637059942, guid: 2c2bad59297c18047b828e7ce87b43c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1449147387}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2114356583
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2114356582}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 32d0518e6494b944782cf86bced5dc39, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2145872594
 GameObject:
   m_ObjectHideFlags: 0
@@ -1693,7 +1706,6 @@ MonoBehaviour:
         m_CallState: 2
   boutonToPress: 2
   timeToPress: 10
-  player: {fileID: 1449147389}
 --- !u!4 &6442709334410738571 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6442709334992458135, guid: ca87b3c753938bc4dac39c6c884bcf44,
@@ -1729,7 +1741,6 @@ MonoBehaviour:
         m_CallState: 2
   boutonToPress: 3
   timeToPress: 4.5
-  player: {fileID: 1449147389}
 --- !u!114 &6442709334410738573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1846,4 +1857,3 @@ MonoBehaviour:
         m_CallState: 2
   boutonToPress: 0
   timeToPress: 2.5
-  player: {fileID: 1449147389}
