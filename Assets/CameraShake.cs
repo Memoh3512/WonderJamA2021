@@ -17,7 +17,7 @@ public class CameraShake : MonoBehaviour
         noise = vcam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin> ();
 
 
-        ShakeCam(2f,1f,5f);
+        //ShakeCam(2f,1f,5f);
 
     }
 

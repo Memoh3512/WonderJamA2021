@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,13 @@ public class Cutscene : MonoBehaviour
     private int i = 0;
     private PlayableDirector cutscene;
     public TimelineAsset[] timelines;
+
+    private void Start()
+    {
+
+        cutscene = GetComponent<PlayableDirector>();
+
+    }
 
     public void StartCutscene(GameObject player)
     {
