@@ -23,12 +23,14 @@ public class QTE : MonoBehaviour
 
     private ButtonControl button;
 
-    public PlayerControls player;
+    private PlayerControls player;
     
     // Start is called before the first frame update
     void Start()
     {
 
+        player = GameObject.FindObjectOfType<PlayerControls>();
+        
         switch (boutonToPress)
         {
             
