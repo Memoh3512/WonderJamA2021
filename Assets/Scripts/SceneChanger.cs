@@ -8,6 +8,7 @@ public enum SceneTypes
     
     PlayerJoin = 0,
     GameplayScene = 1,
+    GameOver = 2,
     
 }
 
@@ -38,6 +39,13 @@ public class SceneChanger : MonoBehaviour
         
         LevelLoader.instance.LoadScene(scene, transitionType);
 
+    }
+
+    public static void GameOver()
+    {
+        
+        LevelLoader.instance.LoadScene(SceneTypes.GameOver, TransitionTypes.CrossFade);
+        
     }
 
 }
