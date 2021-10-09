@@ -67,12 +67,14 @@ public class FollowWaypoints : MonoBehaviour
 
             targetIndex += direction;
         }
-        
-           
-           
-     
 
+
+
+        if(target != null)
+        speed = speed / target.GetComponent<Waypoint>().speed;
         target = waypoints[targetIndex];
+        speed = speed * target.GetComponent<Waypoint>().speed;
+
 
 
     }
@@ -95,8 +97,9 @@ public class FollowWaypoints : MonoBehaviour
 
     void LookTowards()
     {
+        Vector2 between = target.position - transform.position;
 
-        transform.right = target.position - transform.position;
+        transform.right = Vector2.MoveTowards(transform.right, between, lookSpeed * Time.deltaTime);
     }
 
     public void PlayerSeen()
