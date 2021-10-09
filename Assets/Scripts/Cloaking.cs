@@ -9,17 +9,22 @@ public class Cloaking : MonoBehaviour
     private bool cloakToggled;
     private PlayerControls pC;
     private SpriteRenderer sR;
+    private Collider2D collider;
+
+    public GameObject cloakUI;
 
     public void UnlockCloak()
     {
-        
-        
-        
+        cloakUnlocked = true;
+        cloakUI.SetActive(true);
+             
     }
     
     // Start is called before the first frame update
     void Start()
     {
+        
+        collider = GetComponent<Collider2D>();
         cloakToggled = false;
         chargesLeft = 2;
         sR = GetComponent<SpriteRenderer>();
@@ -52,11 +57,13 @@ public class Cloaking : MonoBehaviour
         cloakToggled = true;
         pC.lockMovement = true;
         sR.color = new Color(sR.color.r, sR.color.g, sR.color.b, 0.49f);
+        collider.enabled = false;
         yield return null;
         while (!pC.GetManette().bButton.wasPressedThisFrame)
         {
             yield return null;
         }
+        collider.enabled = true;
         sR.color = new Color(sR.color.r, sR.color.g, sR.color.b, 1);
         chargesLeft--;
         cloakToggled = false;

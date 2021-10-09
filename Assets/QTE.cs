@@ -14,12 +14,15 @@ public enum QTEButton
 
 public class QTE : MonoBehaviour
 {
+
     [SerializeField]
     private UnityEvent onSucceed;
     [SerializeField]
     public QTEButton boutonToPress;
 
     public float timeToPress;
+
+    public int spamCount = 1;
 
     private ButtonControl button;
 
@@ -86,12 +89,16 @@ public class QTE : MonoBehaviour
 
     IEnumerator QTECor()
     {
-
-        while (!button.wasPressedThisFrame)
+        
+        while (spamCount > 0)
         {
-            
-            yield return null;   
-            
+            if (button.wasPressedThisFrame)          
+                spamCount--;      
+            else
+                yield return null;
+
+
+
         }
 
         //end QTE
