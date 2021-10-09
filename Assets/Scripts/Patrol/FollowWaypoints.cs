@@ -23,10 +23,7 @@ public class FollowWaypoints : MonoBehaviour
         direction = 1;
         GetNextTarget();
         playerFound = false;
-        if (Lookdown)
-        {
-            transform.right = -transform.up;
-        }
+        
 
     }
 
@@ -122,8 +119,20 @@ public class FollowWaypoints : MonoBehaviour
 
     public void PlayerSeen()
     {
-        target = GameObject.FindGameObjectWithTag("Player").transform;
-        Lookdown = false;
+        if (!Lookdown)
+        {
+            speed = speed / target.GetComponent<Waypoint>().speed;
+            target = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+        else
+        {
+            CorridorEvent();
+        }
+    }
+
+    void CorridorEvent()
+    {
+
     }
     
 

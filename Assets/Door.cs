@@ -7,6 +7,7 @@ public class Door : MonoBehaviour
     [SerializeField]
     private bool KeyGotten;
 
+    public string popUp;
     public OnInteract onOpen;
     public void GotKey()
     {
@@ -36,7 +37,7 @@ public class Door : MonoBehaviour
 
     void DoorLockedText()
     {
-        GameObject.Find("UIText").GetComponent<UIText>().DisplayText("The door is locked dumbass, find the hecking key >:(");
+        GameObject.Find("UIText").GetComponent<UIText>().DisplayText(popUp);
     }
 
 }
