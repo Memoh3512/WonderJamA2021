@@ -24,6 +24,7 @@ public class PlayerControls : MonoBehaviour
     {
 
         manette = PlayerInputs.GetPlayerController(0);
+        if (manette is null) manette = new Manette(Gamepad.current);
 
     }
     
@@ -38,6 +39,13 @@ public class PlayerControls : MonoBehaviour
         
         var position = transform.position;
         rb.MovePosition(new Vector2(position.x,position.y)+(manette.leftStick*Time.deltaTime*speed));
+
+    }
+
+    public Manette GetManette()
+    {
+
+        return manette;
 
     }
 }

@@ -41,10 +41,11 @@ public class Interactable : MonoBehaviour
         if (ply != null)
         {
             
-            if ( !ply.GetComponent<PlayerControls>().lockMovement && Input.GetKeyDown(KeyCode.E))
+            if ( !ply.GetComponent<PlayerControls>().lockMovement && ply.GetComponent<PlayerControls>().GetManette().aButton.wasPressedThisFrame)
             {
                 
                 onInteract.Invoke(ply);
+                Debug.Log("INTERACTED!!!!");
                 
             }
             
