@@ -83,6 +83,7 @@ GameObject:
   - component: {fileID: 5369439403584080025}
   - component: {fileID: 5369439403584080024}
   - component: {fileID: 5369439403584079974}
+  - component: {fileID: 1691601840149166922}
   m_Layer: 0
   m_Name: Monster
   m_TagString: Untagged
@@ -169,6 +170,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waypoints: []
+  Lookdown: 0
   backtracking: 1
   speed: 100
   lookSpeed: 0
+--- !u!58 &1691601840149166922
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5369439403584080027}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 3
