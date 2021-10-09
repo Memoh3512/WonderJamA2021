@@ -43,7 +43,8 @@ public class Interactable : MonoBehaviour
             
             if ( !ply.GetComponent<PlayerControls>().lockMovement && ply.GetComponent<PlayerControls>().GetManette().aButton.wasPressedThisFrame)
             {
-                
+
+                ply.GetComponent<PlayerControls>().lockMovement = true;
                 onInteract.Invoke(ply);
                 Debug.Log("INTERACTED!!!!");
                 
@@ -77,6 +78,13 @@ public class Interactable : MonoBehaviour
             if (highlight != null) highlight.enabled = false;
         }
 
+    }
+
+    public void GameOver()
+    {
+        
+        SceneChanger.GameOver();
+        
     }
     
 }
