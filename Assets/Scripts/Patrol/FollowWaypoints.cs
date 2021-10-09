@@ -10,6 +10,7 @@ public class FollowWaypoints : MonoBehaviour
     private int targetIndex;
     private Transform target;
 
+    public bool Lookdown;
     public bool backtracking;
     int direction;
     bool playerFound;
@@ -22,6 +23,7 @@ public class FollowWaypoints : MonoBehaviour
         direction = 1;
         GetNextTarget();
         playerFound = false;
+        
 
     }
 
@@ -67,12 +69,23 @@ public class FollowWaypoints : MonoBehaviour
 
             targetIndex += direction;
         }
-        
-           
-           
-     
+
+
+
+        if(target != null)
+        speed = speed / target.GetComponent<Waypoint>().speed;
 
         target = waypoints[targetIndex];
+        float newSpeed = target.GetComponent<Waypoint>().speed;
+        if (newSpeed < 0)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            speed = speed * newSpeed;
+        }
+
 
 
     }
@@ -82,6 +95,7 @@ public class FollowWaypoints : MonoBehaviour
 
        if(Vector2.Distance(transform.position, target.position) < 0.05f)
         {
+
             GetNextTarget();
         }
 
@@ -90,18 +104,35 @@ public class FollowWaypoints : MonoBehaviour
     void Move()
     {
         transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-        LookTowards();
+        if (!Lookdown)
+        {
+            LookTowards();
+        }
     }
 
     void LookTowards()
     {
+        Vector2 between = target.position - transform.position;
 
-        transform.right = target.position - transform.position;
+        transform.right = Vector2.MoveTowards(transform.right, between, lookSpeed * Time.deltaTime);
     }
 
     public void PlayerSeen()
     {
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        if (!Lookdown)
+        {
+            speed = speed / target.GetComponent<Waypoint>().speed;
+            target = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+        else
+        {
+            CorridorEvent();
+        }
+    }
+
+    void CorridorEvent()
+    {
+
     }
     
 
@@ -114,5 +145,13 @@ public class FollowWaypoints : MonoBehaviour
             CheckDistanceWaypoint();
         }
         
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Player")
+        {
+            SceneChanger.GameOver();
+        }
     }
 }

@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class SFXPlayer : MonoBehaviour
 {
-    private SoundEffects sfx;
+    public AudioClip sfx;
 
     public void PlaySFX(float volume)
     {
         
-        SoundPlayer.instance.PlaySFX(sfx,volume);
+        if (sfx != null) SoundPlayer.instance.PlaySFX(sfx,volume);
         
     }
 
