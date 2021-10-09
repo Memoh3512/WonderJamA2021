@@ -5,6 +5,7 @@ using UnityEngine;
 public class Waypoint : MonoBehaviour
 {
     public float speed;
+
     private void Start()
     {
         if(speed == 0)

@@ -18,6 +18,11 @@ public class Cutscene : MonoBehaviour
 
     }
 
+    public void EndCutscene()
+    {
+        cutscene.Stop();
+    }
+
     public void StartCutscene(GameObject player)
     {
 

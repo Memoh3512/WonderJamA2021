@@ -10,6 +10,7 @@ public class FollowWaypoints : MonoBehaviour
     private int targetIndex;
     private Transform target;
 
+    public bool Lookdown;
     public bool backtracking;
     int direction;
     bool playerFound;
@@ -22,6 +23,10 @@ public class FollowWaypoints : MonoBehaviour
         direction = 1;
         GetNextTarget();
         playerFound = false;
+        if (Lookdown)
+        {
+            transform.right = -transform.up;
+        }
 
     }
 
@@ -72,8 +77,17 @@ public class FollowWaypoints : MonoBehaviour
 
         if(target != null)
         speed = speed / target.GetComponent<Waypoint>().speed;
+
         target = waypoints[targetIndex];
-        speed = speed * target.GetComponent<Waypoint>().speed;
+        float newSpeed = target.GetComponent<Waypoint>().speed;
+        if (newSpeed < 0)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            speed = speed * newSpeed;
+        }
 
 
 
@@ -84,6 +98,7 @@ public class FollowWaypoints : MonoBehaviour
 
        if(Vector2.Distance(transform.position, target.position) < 0.05f)
         {
+
             GetNextTarget();
         }
 
@@ -92,7 +107,10 @@ public class FollowWaypoints : MonoBehaviour
     void Move()
     {
         transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-        LookTowards();
+        if (!Lookdown)
+        {
+            LookTowards();
+        }
     }
 
     void LookTowards()
@@ -105,6 +123,7 @@ public class FollowWaypoints : MonoBehaviour
     public void PlayerSeen()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
+        Lookdown = false;
     }
     
 
@@ -117,5 +136,13 @@ public class FollowWaypoints : MonoBehaviour
             CheckDistanceWaypoint();
         }
         
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Player")
+        {
+            SceneChanger.GameOver();
+        }
     }
 }
