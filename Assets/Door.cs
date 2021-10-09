@@ -6,6 +6,8 @@ public class Door : MonoBehaviour
 {
     [SerializeField]
     private bool KeyGotten;
+
+    public OnInteract onOpen;
     public void GotKey()
     {
         KeyGotten = true;
@@ -15,7 +17,7 @@ public class Door : MonoBehaviour
     {
         if (KeyGotten)
         {
-            OpenDoor();
+            OpenDoor(player);
         }
         else
         {
@@ -25,9 +27,10 @@ public class Door : MonoBehaviour
         player.GetComponent<PlayerControls>().lockMovement = false;
     }
 
-    void OpenDoor()
+    void OpenDoor(GameObject player)
     {
         //ouvrage de porte lol.<
+        onOpen.Invoke(player);
         Destroy(gameObject);
     }
 
