@@ -79,6 +79,8 @@ crashlytics-build.properties
 
 # AWS User-specific
 .idea/**/aws.xml
+.idea/
+/UserSettings/
 
 # Generated files
 .idea/**/contentModel.xml
