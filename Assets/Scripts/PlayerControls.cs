@@ -12,6 +12,8 @@ public class PlayerControls : MonoBehaviour
     private Rigidbody2D rb;
     public float speed = 1f;
 
+    public bool lockMovement = false;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -22,12 +24,14 @@ public class PlayerControls : MonoBehaviour
     {
 
         manette = PlayerInputs.GetPlayerController(0);
+        if (Gamepad.current is null) manette = new Manette();
+        else manette = new Manette(Gamepad.current);
 
     }
     
     private void FixedUpdate()
     {
-        MovePlayer();
+        if (!lockMovement) MovePlayer();
 
     }
 
@@ -36,6 +40,13 @@ public class PlayerControls : MonoBehaviour
         
         var position = transform.position;
         rb.MovePosition(new Vector2(position.x,position.y)+(manette.leftStick*Time.deltaTime*speed));
+
+    }
+
+    public Manette GetManette()
+    {
+
+        return manette;
 
     }
 }
