@@ -14,6 +14,7 @@ public class FollowWaypoints : MonoBehaviour
     int direction;
     bool playerFound;
     public float speed;
+    public float lookSpeed;
     void Start()
     {
         GetAllWaypoints();
@@ -94,6 +95,7 @@ public class FollowWaypoints : MonoBehaviour
 
     void LookTowards()
     {
+
         transform.right = target.position - transform.position;
     }
 
