@@ -7,12 +7,15 @@ public class MonsterLightFlicker : MonoBehaviour
 {
     public float timeFlash;
     [Range(0.0f,200.0f)]
-    public float often;
-    [Range(0.5f,5.0f)]
-    public float oftenMod;
+    public float often = 100;
+    [Range(0.5f,2.0f)]
+    public float oftenMod = 0.5f;
     private List<Light2D> lights = new List<Light2D>();
     private List<float> timeLeftFlash = new List<float>();
+    public GameObject parent;
     private Light2D currLight;
+
+    public AudioSource sound;
     
     
     // Start is called before the first frame update
@@ -24,7 +27,7 @@ public class MonsterLightFlicker : MonoBehaviour
     }
     private void GetAllLights()
     {
-        foreach (Light2D light in transform.Find("Lights").GetComponentsInChildren<Light2D>())
+        foreach (Light2D light in parent.GetComponentsInChildren<Light2D>())
         {
             lights.Add(light);
             timeLeftFlash.Add(0f);
@@ -66,16 +69,14 @@ public class MonsterLightFlicker : MonoBehaviour
         {
             currLight=lights[x];
             currLight.enabled=true;
-        }
-        else
-        {
-            return ToggleOnNewLight();
+            if (sound != null) sound.UnPause();
         }
         return x;
     }
     private void ToggleOffLight(Light2D light)
     {
         light.enabled = false;
+        if (sound != null) sound.Pause();
     }
     // Update is called once per frame
     void Update()
