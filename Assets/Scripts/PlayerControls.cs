@@ -15,12 +15,13 @@ public class PlayerControls : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        GetPlayerGamepad();
     }
 
-    public void GetPlayerGamepad(int index)
+    public void GetPlayerGamepad()
     {
 
-        manette = PlayerInputs.GetPlayerController(index);
+        manette = PlayerInputs.GetPlayerController(0);
 
     }
     

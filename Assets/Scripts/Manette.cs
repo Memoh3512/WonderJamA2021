@@ -28,7 +28,7 @@ public class Manette
         mouse = Mouse.current;
 
     }
-
+//penis
     public Manette()
     {
 
@@ -120,7 +120,7 @@ public class Manette
                 if (kb.dKey.isPressed) p.x++;
                 if (kb.sKey.isPressed) p.y--;
                 if (kb.wKey.isPressed) p.y++;
-                Debug.Log(p.ToString());
+                //Debug.Log(p.ToString());
                 
             }
             else
