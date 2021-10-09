@@ -11,7 +11,7 @@ public class Door : MonoBehaviour
         KeyGotten = true;
     }
 
-    public void Interact()
+    public void Interact(GameObject player)
     {
         if (KeyGotten)
         {
@@ -21,11 +21,14 @@ public class Door : MonoBehaviour
         {
             DoorLockedText();
         }
+
+        player.GetComponent<PlayerControls>().lockMovement = false;
     }
 
     void OpenDoor()
     {
-        //ouvrage de porte lol.
+        //ouvrage de porte lol.<
+        Destroy(gameObject);
     }
 
     void DoorLockedText()
