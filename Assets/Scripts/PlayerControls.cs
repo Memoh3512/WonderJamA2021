@@ -12,6 +12,8 @@ public class PlayerControls : MonoBehaviour
     private Rigidbody2D rb;
     public float speed = 1f;
 
+    private bool lockMovement = false;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -27,7 +29,7 @@ public class PlayerControls : MonoBehaviour
     
     private void FixedUpdate()
     {
-        MovePlayer();
+        if (!lockMovement) MovePlayer();
 
     }
 
