@@ -16,8 +16,9 @@ public class Cloaking : MonoBehaviour
     public void UnlockCloak()
     {
         cloakUnlocked = true;
-        cloakUI.SetActive(true);
-             
+        
+        //cloakUI.SetActive(true);
+        pC.lockMovement = false;
     }
     
     // Start is called before the first frame update
