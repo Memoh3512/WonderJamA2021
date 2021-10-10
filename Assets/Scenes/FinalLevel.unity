@@ -9820,6 +9820,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9141567305247843048, guid: 35327ee8ea922034ca90eecf07da9f4b,
+        type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141567305247843048, guid: 35327ee8ea922034ca90eecf07da9f4b,
+        type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141567305247843048, guid: 35327ee8ea922034ca90eecf07da9f4b,
+        type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 771118970}
+    - target: {fileID: 9141567305247843048, guid: 35327ee8ea922034ca90eecf07da9f4b,
+        type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141567305247843048, guid: 35327ee8ea922034ca90eecf07da9f4b,
+        type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlaySFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141567305247843048, guid: 35327ee8ea922034ca90eecf07da9f4b,
+        type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SFXPlayer, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141567305247843048, guid: 35327ee8ea922034ca90eecf07da9f4b,
+        type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141567305247843048, guid: 35327ee8ea922034ca90eecf07da9f4b,
+        type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 9141567305247843050, guid: 35327ee8ea922034ca90eecf07da9f4b,
         type: 3}
       propertyPath: m_Name
@@ -10340,6 +10380,25 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!1 &771118969 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9141567305247843050, guid: 35327ee8ea922034ca90eecf07da9f4b,
+    type: 3}
+  m_PrefabInstance: {fileID: 682367034}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &771118970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771118969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ed2decda6f197047b7c99932fedd91c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfx: {fileID: 8300000, guid: 7e02675d47c85ef45b849f1ea1bc62de, type: 3}
 --- !u!1001 &782723019
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28299,6 +28358,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: Key
       objectReference: {fileID: 0}
+    - target: {fileID: 1513529672764379367, guid: 8ad75daab26f33244b33729235f8d6ba,
+        type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1513529672764379367, guid: 8ad75daab26f33244b33729235f8d6ba,
+        type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1513529672764379367, guid: 8ad75daab26f33244b33729235f8d6ba,
+        type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1794437280}
+    - target: {fileID: 1513529672764379367, guid: 8ad75daab26f33244b33729235f8d6ba,
+        type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1513529672764379367, guid: 8ad75daab26f33244b33729235f8d6ba,
+        type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlaySFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 1513529672764379367, guid: 8ad75daab26f33244b33729235f8d6ba,
+        type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SFXPlayer, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1513529672764379367, guid: 8ad75daab26f33244b33729235f8d6ba,
+        type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1513529672764379367, guid: 8ad75daab26f33244b33729235f8d6ba,
+        type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1513529672764379385, guid: 8ad75daab26f33244b33729235f8d6ba,
         type: 3}
       propertyPath: m_SortingOrder
@@ -41299,6 +41398,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1793613728}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1794437279 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1513529672764379365, guid: 8ad75daab26f33244b33729235f8d6ba,
+    type: 3}
+  m_PrefabInstance: {fileID: 1314499504}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1794437280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794437279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ed2decda6f197047b7c99932fedd91c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfx: {fileID: 8300000, guid: 7e02675d47c85ef45b849f1ea1bc62de, type: 3}
 --- !u!1 &1811224141
 GameObject:
   m_ObjectHideFlags: 0
