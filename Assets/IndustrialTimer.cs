@@ -5,7 +5,7 @@ using UnityEngine;
 public class IndustrialTimer : MonoBehaviour
 {
     public AudioClip clip;
-    private float cliptime = 6f;
+    private float cliptime = 10f;
     
     // Start is called before the first frame update
     void Start()
