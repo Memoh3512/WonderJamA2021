@@ -9,6 +9,7 @@ public enum SceneTypes
     PlayerJoin = 0,
     GameplayScene = 1,
     GameOver = 2,
+    IntroCutscene = 3,
     
 }
 

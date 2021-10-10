@@ -11,6 +11,7 @@ public enum QTEButton
     a,b,left,right,up,down
     
 }
+//penis
 
 public class QTE : MonoBehaviour
 {
