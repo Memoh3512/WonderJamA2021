@@ -18,6 +18,7 @@ public class EventSpookySound : MonoBehaviour
     private IEnumerator Play()
     {
 
+        GameObject.FindObjectOfType<CameraShake>().ShakeCam(2.7f,1f,5f);
         SoundPlayer.instance.PlaySFX(sfx1);
         yield return new WaitForSeconds(0.2f);
         SoundPlayer.instance.PlaySFX(sfx2, 0.5f);
