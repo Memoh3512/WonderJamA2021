@@ -9,6 +9,7 @@ public class Crack : MonoBehaviour
     public GameObject fond;
     public GameObject monster;
     public GameObject pressA;
+    public GameObject canvas;
     private PlayerControls pC;
 
     public float monsterOffset;
@@ -19,6 +20,7 @@ public class Crack : MonoBehaviour
         fond.SetActive(false);
         monster.SetActive(false);
         pressA.SetActive(false);
+        canvas.SetActive(false);
         pC = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
     }
 
@@ -43,7 +45,8 @@ public class Crack : MonoBehaviour
         }
 
         pressA.SetActive(false);
-        SoundPlayer.instance.PlaySFX(Resources.Load<AudioClip>("Sound/SFX/FitCrack"),1); 
+        SoundPlayer.instance.PlaySFX(Resources.Load<AudioClip>("Sound/SFX/FitCrack"),1);
+        FindObjectOfType<CinemachineVirtualCamera>().GetComponent<CameraShake>().ShakeCam(1f, 5f, 5f, RumbleForce.Weak);
         while (FindObjectOfType<CinemachineVirtualCamera>().m_Lens.OrthographicSize  > 6f)
         {
             FindObjectOfType<CinemachineVirtualCamera>().m_Lens.OrthographicSize -= Time.deltaTime;
@@ -59,13 +62,14 @@ public class Crack : MonoBehaviour
         }
 
         pressA.SetActive(false);
-
+        FindObjectOfType<CinemachineVirtualCamera>().GetComponent<CameraShake>().ShakeCam(2f, 7f, 5f, RumbleForce.Weak);
+        SoundPlayer.instance.PlaySFX(Resources.Load<AudioClip>("Sound/SFX/FitCrack"), 1);
         while (FindObjectOfType<CinemachineVirtualCamera>().m_Lens.OrthographicSize > 4f)
         {
             FindObjectOfType<CinemachineVirtualCamera>().m_Lens.OrthographicSize -= Time.deltaTime;
             yield return null;
         }
-        SoundPlayer.instance.PlaySFX(Resources.Load<AudioClip>("Sound/SFX/FitCrack"), 1);
+        
         yield return new WaitForSeconds(0.9f);
         SoundPlayer.instance.PlaySFX(Resources.Load<AudioClip>("Sound/SFX/Jumpscare_V01"), 1);
         yield return new WaitForSeconds(0.1f);
@@ -74,6 +78,7 @@ public class Crack : MonoBehaviour
         monsterOffset = monster.transform.position.x - fond.transform.position.x;
         StartCoroutine(FootStepsMonster());
         yield return new WaitForSeconds(0.25f);
+        canvas.SetActive(true);
 
         while (!pC.GetManette().aButton.wasPressedThisFrame)
         {
@@ -81,15 +86,19 @@ public class Crack : MonoBehaviour
                                      
             yield return null;
         }
-        if (Mathf.Abs(monster.transform.position.x - fond.transform.position.x) < 7f)
+        canvas.SetActive(false);
+        if (monster.transform.position.x < -23f)
         {
             SoundPlayer.instance.PlaySFX(Resources.Load<AudioClip>("Sound/SFX/FitCrack"), 1);
+            FindObjectOfType<CinemachineVirtualCamera>().GetComponent<CameraShake>().ShakeCam(1f, 5f, 5f, RumbleForce.Weak);
             yield return new WaitForSeconds(2f);         
             StartCoroutine(GameOver());
         }
         else
         {
             pC.gameObject.transform.position += 7*Vector3.right ;
+            crack.transform.position += 7 * Vector3.right;
+            fond.transform.position += 7 * Vector3.right;
             StartCoroutine(Finish());
         }
 
@@ -100,17 +109,20 @@ public class Crack : MonoBehaviour
     IEnumerator GameOver()
     {
         SoundPlayer.instance.PlaySFX(Resources.Load<AudioClip>("Sound/SFX/Monster scream_VF"), 1);
+        FindObjectOfType<CinemachineVirtualCamera>().GetComponent<CameraShake>().ShakeCam(3f, 7f, 6f, RumbleForce.Weak);
         yield return new WaitForSeconds(5);
         SceneChanger.GameOver();
     }
 
     IEnumerator Finish()
     {
-        while(fond.GetComponent<SpriteRenderer>().color.a > 0)
+        FindObjectOfType<CinemachineVirtualCamera>().GetComponent<CameraShake>().ShakeCam(1f, 5f, 5f, RumbleForce.Weak);
+
+        while (fond.GetComponent<SpriteRenderer>().color.a > 0)
         {
             Color col = fond.GetComponent<SpriteRenderer>().color;
-            fond.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, col.a - Time.deltaTime);
-            crack.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, col.a - Time.deltaTime);
+            fond.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, col.a - Time.deltaTime);
+            crack.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, col.a - Time.deltaTime);
             yield return null;
         }
         FindObjectOfType<CinemachineVirtualCamera>().m_Lens.OrthographicSize = 7;
@@ -133,7 +145,7 @@ public class Crack : MonoBehaviour
 
                 vol = (monsterOffset - Mathf.Abs(monster.transform.position.x - transform.position.x)) / monsterOffset;
                 vol = Mathf.Max(0, vol);
-                Debug.Log(vol);
+             
 
             }
             else
