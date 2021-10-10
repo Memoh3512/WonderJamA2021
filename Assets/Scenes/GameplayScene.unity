@@ -3697,7 +3697,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -5109,10 +5109,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   egout: {fileID: 2354183756706703255}
-  unitsTasse: 2
+  unitsTasse: 1
   egoutTassage: {fileID: 8300000, guid: 2a4a3b99628017d4d8e113ed613d25f9, type: 3}
   fallClip: {fileID: 8300000, guid: f996831eda275ef4bac4184cfc33d80e, type: 3}
   splashClip: {fileID: 8300000, guid: 031a6833b7761b048a5d635f9f7bad2d, type: 3}
+  goutteMusic: {fileID: 0}
   fadeOut: {fileID: 1355543036}
   tpPos: {fileID: 1217219881}
 --- !u!114 &2354183756706703257

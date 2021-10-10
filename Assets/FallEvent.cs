@@ -6,11 +6,12 @@ public class FallEvent : MonoBehaviour
 {
     public GameObject egout;
 
-    public float unitsTasse = 1f;
+    public float unitsTasse = 0.5f;
 
     public AudioClip egoutTassage;
     public AudioClip fallClip;
     public AudioClip splashClip;
+    public AudioClip goutteMusic;
 
     public CanvasGroup fadeOut;
 
@@ -48,7 +49,7 @@ public class FallEvent : MonoBehaviour
         while (Vector2.Distance((Vector2)target,(Vector2)transform.position) > 0.1f)
         {
 
-            transform.position = Vector2.MoveTowards(transform.position, target, Time.deltaTime*0.8f);
+            transform.position = Vector2.MoveTowards(transform.position, target, Time.deltaTime*0.4f);
             yield return null;
 
         }
@@ -75,8 +76,9 @@ public class FallEvent : MonoBehaviour
         player.transform.position = tpPos.position;
         
         //wait
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         
+        SoundPlayer.instance.SetMusic(Songs.Gouttes);
 
         //fade in
         while (fadeOut.alpha > 0f)
