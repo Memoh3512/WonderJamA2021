@@ -7,14 +7,19 @@ public class Tentacle : MonoBehaviour
 {
     private bool ended;
     SpriteRenderer sR;
+    public GameObject child1;
+    public GameObject child2;
     private void Start()
     {
+
+        child1.SetActive(false);
+        child2.SetActive(false);
         sR = GetComponent<SpriteRenderer>();
         sR.enabled = false;
     }
     public void Startacle()
     {
-        sR.enabled = true;
+       
         StartCoroutine(Tentacling());
         StartCoroutine(Zoom());
         StartCoroutine(Sounds());
@@ -30,6 +35,9 @@ public class Tentacle : MonoBehaviour
     {
         SoundPlayer.instance.PlaySFX(Resources.Load<AudioClip>("Sound/SFX/Jumpscare_V01"), 1);
         yield return new WaitForSeconds(0.5f);
+        child1.SetActive(true);
+        child2.SetActive(true);
+        sR.enabled = true;
         SoundPlayer.instance.PlaySFX(Resources.Load<AudioClip>("Sound/SFX/Monster scream_VF"), 0.5f);  
         yield return new WaitForSeconds(1.5f);
         while (!ended)
@@ -43,9 +51,9 @@ public class Tentacle : MonoBehaviour
     {       
         Transform player = GameObject.FindGameObjectWithTag("Player").transform;
        
-        while (transform.position.x < 34.8f && !ended)
+        while (transform.position.x < 35.8f && !ended)
        {
-            transform.position += Vector3.right*Time.deltaTime * 0.82f;
+            transform.position += Vector3.right*Time.deltaTime * 1.3f;
             yield return null;
        }
        
