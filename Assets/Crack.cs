@@ -113,10 +113,11 @@ public class Crack : MonoBehaviour
             crack.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, col.a - Time.deltaTime);
             yield return null;
         }
-
+        FindObjectOfType<CinemachineVirtualCamera>().m_Lens.OrthographicSize = 7;
         crack.SetActive(false);
         fond.SetActive(false);
         pC.lockMovement = false;
+
         
 
     }
