@@ -1194,6 +1194,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 522030702, guid: e25694f1fad76f446b89ba2d8c67df8a, type: 3}
+      propertyPath: screamClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f102471aac9fc0c47ba1d83bd4c0630f, type: 3}
+    - target: {fileID: 522030702, guid: e25694f1fad76f446b89ba2d8c67df8a, type: 3}
       propertyPath: waypoints.Array.size
       value: 8
       objectReference: {fileID: 0}
@@ -7682,7 +7686,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -9493,6 +9497,54 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35327ee8ea922034ca90eecf07da9f4b, type: 3}
+--- !u!1 &684373246
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 684373248}
+  - component: {fileID: 684373247}
+  m_Layer: 0
+  m_Name: Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &684373247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684373246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 8d5492206f000fc47a0ed3e37e012a8f, type: 2}
+--- !u!4 &684373248
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684373246}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 28
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &693462357
 GameObject:
   m_ObjectHideFlags: 0
@@ -27807,6 +27859,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 210283184754113032, guid: f948e4375ecddf4459aaa61a342784a9,
         type: 3}
+    - target: {fileID: 4168765546936114262, guid: 8ad75daab26f33244b33729235f8d6ba,
+        type: 3}
+      propertyPath: popUpText
+      value: Found a keycard. It should open a door nearby
+      objectReference: {fileID: 0}
     - target: {fileID: 4168765546936114262, guid: 8ad75daab26f33244b33729235f8d6ba,
         type: 3}
       propertyPath: doors.Array.size
