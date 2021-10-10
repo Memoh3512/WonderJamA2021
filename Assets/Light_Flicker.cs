@@ -13,6 +13,7 @@ public class Light_Flicker : MonoBehaviour
     private float timeLeftFlash=0;
     public GameObject particleSystem=null;
     private Light2D currLight;
+    
 
     public AudioSource sound;
     void Start()
