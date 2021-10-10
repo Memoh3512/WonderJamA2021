@@ -19,6 +19,8 @@ public class MonsterStateControl : MonoBehaviour
     private bool playerFound;
     private float baseSpeed;
 
+    public AudioClip screamClip;
+
     private void Start()
     {
         baseSpeed = speed;
@@ -104,6 +106,7 @@ public class MonsterStateControl : MonoBehaviour
             target = GameObject.FindGameObjectWithTag("Player").transform;
             playerFound = true;
             speed = baseSpeed*2;
+            SoundPlayer.instance.PlaySFX(screamClip,0.5f);
        
     }
 
