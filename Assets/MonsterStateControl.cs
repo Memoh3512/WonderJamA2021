@@ -105,7 +105,7 @@ public class MonsterStateControl : MonoBehaviour
     
             target = GameObject.FindGameObjectWithTag("Player").transform;
             playerFound = true;
-            speed = baseSpeed*2;
+            speed = baseSpeed*3;
             SoundPlayer.instance.PlaySFX(screamClip,0.5f);
        
     }
