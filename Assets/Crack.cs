@@ -11,6 +11,7 @@ public class Crack : MonoBehaviour
     public GameObject pressA;
     public GameObject canvas;
     private PlayerControls pC;
+    public GameObject monsterReal;
 
     public float monsterOffset;
     // Start is called before the first frame update
@@ -96,6 +97,7 @@ public class Crack : MonoBehaviour
         }
         else
         {
+            monsterReal.SetActive(false);
             pC.gameObject.transform.position += 7*Vector3.right ;
             crack.transform.position += 7 * Vector3.right;
             fond.transform.position += 7 * Vector3.right;
@@ -129,8 +131,8 @@ public class Crack : MonoBehaviour
         crack.SetActive(false);
         fond.SetActive(false);
         pC.lockMovement = false;
-
         
+
 
     }
 
