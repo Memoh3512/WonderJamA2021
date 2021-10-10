@@ -5,11 +5,9 @@ using UnityEngine.Experimental.Rendering.Universal;
 
 public class MonsterLightFlicker : MonoBehaviour
 {
-    public float timeFlash=0.25f;
-    [Range(0.0f,200.0f)]
+    public float timeFlash=30f;
+    [Range(30f,95f)]
     public float often = 100;
-    [Range(0.5f,2.0f)]
-    public float oftenMod = 0.9f;
     private List<Light2D> lights = new List<Light2D>();
     private List<float> timeLeftFlash = new List<float>();
     private List<GameObject> particleSystems = new List<GameObject>();
@@ -47,8 +45,8 @@ public class MonsterLightFlicker : MonoBehaviour
     {
         if (reset)
         {
-
-            if (Random.Range(0, (int)(often * oftenMod - (often / 2))) == 0)
+            float random = Random.Range(0, (int)(10*(-often+100) * (1 / Time.deltaTime)/often*timeFlash));
+            if (random==0)
             {
                 timeLeftFlash[ToggleOnNewLight()]=Random.Range(-timeFlash * 0.3f + timeFlash, timeFlash * 0.3f + timeFlash);
             }
@@ -95,7 +93,7 @@ public class MonsterLightFlicker : MonoBehaviour
         light.enabled = false;
         if (sound != null) sound.Pause();
     }
-    // Update is called once per frame
+    // Update is called once per frame, penis
     void Update()
     {
         Flash(true);
