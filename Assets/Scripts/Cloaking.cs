@@ -10,14 +10,14 @@ public class Cloaking : MonoBehaviour
     private PlayerControls pC;
     private SpriteRenderer sR;
     private Collider2D collider;
-
+    
     public GameObject cloakUI;
 
     public void UnlockCloak()
     {
         cloakUnlocked = true;
         
-        //cloakUI.SetActive(true);
+        cloakUI.SetActive(true);
         pC.lockMovement = false;
     }
     
@@ -25,9 +25,10 @@ public class Cloaking : MonoBehaviour
     void Start()
     {
         
+        if (cloakUI != null) cloakUI.SetActive(false);
         collider = GetComponent<Collider2D>();
         cloakToggled = false;
-        chargesLeft = 2;
+        chargesLeft = 3;
         sR = GetComponent<SpriteRenderer>();
         pC = GetComponent<PlayerControls>();
     }
@@ -57,6 +58,8 @@ public class Cloaking : MonoBehaviour
     {
         cloakToggled = true;
         pC.lockMovement = true;
+        GameObject.Find($"Charge{chargesLeft}").SetActive(false);
+        chargesLeft--;
         sR.color = new Color(sR.color.r, sR.color.g, sR.color.b, 0.49f);
         collider.enabled = false;
         yield return null;
@@ -66,7 +69,6 @@ public class Cloaking : MonoBehaviour
         }
         collider.enabled = true;
         sR.color = new Color(sR.color.r, sR.color.g, sR.color.b, 1);
-        chargesLeft--;
         cloakToggled = false;
         pC.lockMovement = false;
 
