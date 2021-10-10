@@ -62,7 +62,7 @@ public class PlayerEntry : MonoBehaviour
                 
                 //Debug.Log("START GAME");
                 SoundPlayer.instance.PlaySFX(Resources.Load<AudioClip>("Sound/SFX/Press button_VF"), 0.7f);
-                SceneChanger.ChangeScene(SceneTypes.GameOver, TransitionTypes.CrossFade);
+                SceneChanger.ChangeScene(SceneTypes.IntroCutscene, TransitionTypes.CrossFade);
                 
             }
             
