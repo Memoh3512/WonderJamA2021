@@ -38,7 +38,12 @@ public class PlayerFinder : MonoBehaviour
 
         Ray ray = new Ray(transform.position, (player.transform.position - transform.position));
         RaycastHit2D hit = Physics2D.Raycast(transform.position, (player.transform.position - transform.position).normalized,8.5f, 1 << 6);
-        return hit.collider.tag == "Player";
+        if (hit != null)
+        {
+            return hit.collider.CompareTag("Player");
+        }
+        else
+            return false;
 
     }
 
