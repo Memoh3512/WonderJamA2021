@@ -23,7 +23,9 @@ public class CiviereEvent : MonoBehaviour
     public void EndCutscene()
     {
         pC.lockMovement = false;
+        pC.transform.position = pC.transform.position + new Vector3(-2, 0, 0);
         button.enabled = false;
+        GetComponent<Collider2D>().enabled = true;
     }
 
     public void GameOver()
