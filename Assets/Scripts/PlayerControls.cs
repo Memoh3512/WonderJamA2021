@@ -14,10 +14,12 @@ public class PlayerControls : MonoBehaviour
 
     public bool lockMovement = false;
 
+    public AudioClip stepSound;
+
     private void Awake()
     {
         
-        GetPlayerGamepad();   
+        GetPlayerGamepad();
         
     }
 
@@ -63,4 +65,12 @@ public class PlayerControls : MonoBehaviour
         return manette;
 
     }
+
+    public void PlayStepSound()
+    {
+        
+        SoundPlayer.instance.PlaySFX(stepSound, 0.15f);
+        
+    }
+    
 }
