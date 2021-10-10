@@ -7,10 +7,8 @@ using UnityEngine.Experimental.Rendering.Universal;
 public class Light_Flicker : MonoBehaviour
 {
     public float timeFlash=0.25f;
-    [Range(0.0f,200.0f)]
-    public float often = 100;
-    [Range(0.5f,2.0f)]
-    public float oftenMod = 0.9f;
+    [Range(30f,60f)]
+    public float often = 30;
     private Light2D light;
     private float timeLeftFlash=0;
     public GameObject particleSystem=null;
@@ -29,10 +27,10 @@ public class Light_Flicker : MonoBehaviour
         if (reset)
         {
 
-            if (timeLeftFlash<timeFlash*0.2&&Random.Range(0, (int)(often * oftenMod - (often / 2))) == 0)
+            if (timeLeftFlash<timeFlash*0.2&&Random.Range(0, (int)(10*(-often+100) * (1 / Time.deltaTime)/often*timeFlash))==0)
             {
-                light.enabled = true;
-                timeLeftFlash=Random.Range(-timeFlash * 0.3f + timeFlash, timeFlash * 0.3f + timeFlash);
+                light.enabled = false;
+                timeLeftFlash=Random.Range(-timeFlash * 0.5f + timeFlash, timeFlash * 0.5f + timeFlash);
             }
             
             if (timeLeftFlash > 0)
@@ -40,7 +38,9 @@ public class Light_Flicker : MonoBehaviour
                 timeLeftFlash -= Time.deltaTime;
                 if (timeLeftFlash <= 0)
                 {
-                    ToggleOffLight(light);
+                    light.enabled = true;
+                    if (sound != null) sound.Pause();
+                    
                     if (particleSystem!=null)
                     {
                         particleSystem.SetActive(false);
@@ -54,11 +54,7 @@ public class Light_Flicker : MonoBehaviour
         }
         return false;
     }
-    private void ToggleOffLight(Light2D light)
-    {
-        light.enabled = false;
-        if (sound != null) sound.Pause();
-    }
+  
     // Update is called once per frame
     void Update()
     {

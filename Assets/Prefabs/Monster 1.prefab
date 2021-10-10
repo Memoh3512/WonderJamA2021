@@ -244,8 +244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeFlash: 0.25
-  often: 100
-  oftenMod: 1.2
+  often: 35
   parent: {fileID: 868465715610201510}
   sound: {fileID: 0}
 --- !u!1 &868465715610201510
@@ -807,9 +806,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02376ec2286704948985791ae5aee853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeFlash: 2
-  often: 100
-  oftenMod: 0.74
+  timeFlash: 0.2
+  often: 35
   particleSystem: {fileID: 0}
   sound: {fileID: 0}
 --- !u!1001 &906966720178821646
