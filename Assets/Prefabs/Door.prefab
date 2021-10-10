@@ -232,6 +232,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   closed: {fileID: -7341407202210888751, guid: 9d0e8114cb82dd748a3d2c7b79886bcc, type: 3}
   opened: {fileID: 6623719234781301212, guid: 9d0e8114cb82dd748a3d2c7b79886bcc, type: 3}
+  green: {fileID: 1062154799390933857}
+  red: {fileID: 1960953377395896924}
 --- !u!1 &1134593866332640819
 GameObject:
   m_ObjectHideFlags: 0
