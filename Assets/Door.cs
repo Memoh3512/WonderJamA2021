@@ -32,7 +32,7 @@ public class Door : MonoBehaviour
     {
         //ouvrage de porte lol.<
         onOpen.Invoke(player);
-        Destroy(gameObject);
+       // Destroy(gameObject);
     }
 
     void DoorLockedText()
