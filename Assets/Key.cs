@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class Key : MonoBehaviour
 {
-    public GameObject door;
     public string popUpText;
-    private Door doorScript;
+    public List<Door> doorScripts;
     // Start is called before the first frame update
     void Start()
     {
-        doorScript = door.GetComponent<Door>();
     }
 
     // Update is called once per frame
@@ -25,7 +23,10 @@ public class Key : MonoBehaviour
 
     void UnlockDoor()
     {
-        doorScript.GotKey();
+        foreach (var doorScript in doorScripts)
+        {
+            doorScript.GotKey();
+        }
     }
 
     void GetKey()

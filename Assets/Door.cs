@@ -22,16 +22,19 @@ public class Door : MonoBehaviour
         }
         else
         {
+            GameObject.FindWithTag("Player").GetComponent<PlayerControls>().lockMovement = false;
             DoorLockedText();
+            player.GetComponent<PlayerControls>().lockMovement = false;
         }
 
-        //player.GetComponent<PlayerControls>().lockMovement = false;
+       
     }
 
     void OpenDoor(GameObject player)
     {
         //ouvrage de porte lol.<
         onOpen.Invoke(player);
+        
        // Destroy(gameObject);
     }
 
