@@ -662,7 +662,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeFlash: 0.25
-  often: 35
+  often: 75
   parent: {fileID: 4401651260378006437}
   sound: {fileID: 0}
 --- !u!1 &7525161047712397790
