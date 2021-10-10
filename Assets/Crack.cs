@@ -88,7 +88,7 @@ public class Crack : MonoBehaviour
             yield return null;
         }
         canvas.SetActive(false);
-        if (monster.transform.position.x < -23f)
+        if (monster.transform.position.x > -23f)
         {
             SoundPlayer.instance.PlaySFX(Resources.Load<AudioClip>("Sound/SFX/FitCrack"), 1);
             FindObjectOfType<CinemachineVirtualCamera>().GetComponent<CameraShake>().ShakeCam(1f, 5f, 5f, RumbleForce.Weak);
