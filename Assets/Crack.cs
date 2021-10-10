@@ -84,11 +84,12 @@ public class Crack : MonoBehaviour
         while (!pC.GetManette().aButton.wasPressedThisFrame)
         {
             monster.transform.position += Vector3.left * Time.deltaTime*3f;
-                                     
+            Debug.Log(monster.transform.position.x);
             yield return null;
         }
         canvas.SetActive(false);
-        if (monster.transform.position.x < -23f)
+        
+        if (monster.transform.position.x > -1f && monster.activeSelf)
         {
            
             yield return new WaitForSeconds(2f);         
