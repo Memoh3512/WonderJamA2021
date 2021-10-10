@@ -42,6 +42,15 @@ public class PlayerControls : MonoBehaviour
     private void FixedUpdate()
     {
         if (!lockMovement) MovePlayer();
+        else
+        {
+
+            Animator animator = GetComponent<Animator>();
+            animator.SetFloat("X", 0);
+            animator.SetFloat("Y", 0);
+            animator.SetFloat("magnitude", 0);
+            
+        }
 
     }
 
