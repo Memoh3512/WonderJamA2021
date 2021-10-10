@@ -7646,7 +7646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dc1408801588d14a995cce7f40d394f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: {x: -2, y: 0, z: 0}
+  x: {x: -1, y: 0, z: 0}
 --- !u!4 &424880926 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 368280449956560177, guid: 8050cf1f975aedf4ebd3a01ca9d404cf,
@@ -52332,9 +52332,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'it''s coming fast!
+  m_text: 'It''s coming fast!
 
-    find something.'
+    find something'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 20d2efa44633b2449a3d12f0ab8d3bd7, type: 2}
   m_sharedMaterial: {fileID: -1426067331004534817, guid: 20d2efa44633b2449a3d12f0ab8d3bd7,
