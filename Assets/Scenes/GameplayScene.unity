@@ -5234,6 +5234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 484640188}
+  showOnStart: 0
   displaySFX: {fileID: 0}
 --- !u!1 &505914647
 GameObject:
@@ -5527,18 +5528,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 553253877}
-        m_TargetAssemblyTypeName: SFXPlayer, Assembly-CSharp
-        m_MethodName: PlaySFX
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 2
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 553253875}
         m_TargetAssemblyTypeName: FallEvent2, Assembly-CSharp
         m_MethodName: LockMovement
@@ -5670,6 +5659,7 @@ MonoBehaviour:
   m_Events:
     m_Signals:
     - {fileID: 11400000, guid: 05927bbae89a16d48a65a89f5f3a0524, type: 2}
+    - {fileID: 11400000, guid: 142715d01f7b5744999cc2f44169db84, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -5677,6 +5667,20 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
           m_MethodName: CallGameOver
           m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 553253877}
+          m_TargetAssemblyTypeName: SFXPlayer, Assembly-CSharp
+          m_MethodName: PlaySFX
+          m_Mode: 4
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5704,6 +5708,8 @@ PlayableDirector:
     value: {fileID: 553253865}
   - key: {fileID: -8000804330447858635, guid: 5bc83e277eacff9418677392cb5afb56, type: 2}
     value: {fileID: 1688006986}
+  - key: {fileID: 149366547592190202, guid: 5bc83e277eacff9418677392cb5afb56, type: 2}
+    value: {fileID: 1449147390}
   m_ExposedReferences:
     m_References: []
 --- !u!114 &553253874
@@ -7368,15 +7374,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 288580241, guid: 2c2bad59297c18047b828e7ce87b43c2, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: -8476953703607497813, guid: 2c2bad59297c18047b828e7ce87b43c2,
         type: 3}
       propertyPath: stepSound
       value: 
       objectReference: {fileID: 8300000, guid: f1ef758c9ef5d074d9722cd761511afe, type: 3}
+    - target: {fileID: 288580241, guid: 2c2bad59297c18047b828e7ce87b43c2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 288580243, guid: 2c2bad59297c18047b828e7ce87b43c2, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -7468,6 +7474,12 @@ Transform:
 --- !u!1 &1449147389 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5011906022637059942, guid: 2c2bad59297c18047b828e7ce87b43c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1449147387}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1449147390 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2114356583, guid: 2c2bad59297c18047b828e7ce87b43c2,
     type: 3}
   m_PrefabInstance: {fileID: 1449147387}
   m_PrefabAsset: {fileID: 0}
