@@ -10,6 +10,7 @@ public enum SceneTypes
     GameplayScene = 1,
     GameOver = 2,
     IntroCutscene = 3,
+    FinalLevel = 4,
     
 }
 
