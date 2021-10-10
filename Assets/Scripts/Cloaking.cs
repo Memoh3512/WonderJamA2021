@@ -24,7 +24,8 @@ public class Cloaking : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cloakUI.SetActive(false);
+        
+        if (cloakUI != null) cloakUI.SetActive(false);
         collider = GetComponent<Collider2D>();
         cloakToggled = false;
         chargesLeft = 3;
