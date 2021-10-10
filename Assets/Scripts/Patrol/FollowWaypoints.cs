@@ -45,50 +45,60 @@ public class FollowWaypoints : MonoBehaviour
 
     void GetNextTarget()
     {
-        if (direction > 0)
+        if (Lookdown)
         {
-            if (targetIndex < waypoints.Count - 1)
+            if (direction > 0)
             {
-                targetIndex += direction;
-            }
-            else if (!backtracking)
-            {
-                targetIndex = 0;
-            }
-            else 
-            {
-                direction = -1;
-                targetIndex += direction;
+                if (targetIndex < waypoints.Count - 1)
+                {
+                    targetIndex += direction;
+                }
+                else if (!backtracking)
+                {
+                    targetIndex = 0;
+                }
+                else
+                {
+                    direction = -1;
+                    targetIndex += direction;
+
+                }
+
 
             }
+            else
+            {
+                if (targetIndex == 0)
+                {
+                    direction = 1;
+
+                }
+
+                targetIndex += direction;
+            }
+
+
+
+            if (target != null)
+                speed = speed / target.GetComponent<Waypoint>().speed;
+
+            target = waypoints[targetIndex];           
+            float newSpeed = target.GetComponent<Waypoint>().speed;
+            Debug.Log(newSpeed);
+            if (newSpeed < 0)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                speed = speed * newSpeed;
+            }
+        }
+        else
+        {
           
+            transform.parent.GetComponent<MonsterStateControl>().newTarget(target.position - transform.parent.position);
 
-        }
-        else
-        {
-            if (targetIndex == 0)
-            {
-                direction = 1;
-               
-            }
-
-            targetIndex += direction;
-        }
-
-
-
-        if(target != null)
-        speed = speed / target.GetComponent<Waypoint>().speed;
-
-        target = waypoints[targetIndex];
-        float newSpeed = target.GetComponent<Waypoint>().speed;
-        if (newSpeed < 0)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            speed = speed * newSpeed;
         }
 
 
@@ -108,36 +118,19 @@ public class FollowWaypoints : MonoBehaviour
 
     void Move()
     {
-        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+       
         if (!Lookdown)
         {
-            LookTowards();
+            transform.parent.position = Vector2.MoveTowards(transform.parent.position, target.position, speed * Time.deltaTime);
+            
         }
-    }
-
-    void LookTowards()
-    {
-       
-        Vector2 between = target.position - transform.position;
-        if (patrol)
+        else
         {
-            if (between.x < 0)
-            {
-                sR.flipX = true;
-                between = -between;
-                if(kid.transform.localRotation.z == 0)
-                transform.GetChild(0).transform.Rotate(new Vector3(0,0,180)) ;
-            }
-            else
-            {
-                sR.flipX = false;
-                if (kid.transform.localRotation.z != 0)
-                    transform.GetChild(0).transform.Rotate(new Vector3(0, 0, -180));
-            }
+            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         }
-        transform.right = Vector2.MoveTowards(transform.right, between, lookSpeed * Time.deltaTime);
-
     }
+
+
 
     public void PlayerSeen()
     {
