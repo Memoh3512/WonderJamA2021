@@ -8,7 +8,7 @@ public enum Songs
 {
     
     Gouttes,
-    GameplaySong
+    introSong
     
 }
 
@@ -189,7 +189,7 @@ public class SoundPlayer : MonoBehaviour
         songs = new Dictionary<Songs, AudioClip>()
         {
             {Songs.Gouttes, Resources.Load<AudioClip>("Sound/Music/Gouttes d'eau_V01")},
-            //{Songs.GameplaySong, Resources.Load<AudioClip>("Sound/Music/Where Do I Belong")},
+            {Songs.introSong, Resources.Load<AudioClip>("Sound/Music/Where Do I Belong")},
             //...
         };
 
