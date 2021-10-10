@@ -19,5 +19,6 @@ public class UnPlugWin : MonoBehaviour
     public void UnPlugged()
     {
         Debug.Log("WIN!");
+        SceneChanger.ChangeScene(SceneTypes.Win);
     }
 }
