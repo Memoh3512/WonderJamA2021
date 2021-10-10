@@ -35,9 +35,10 @@ public class CameraShake : MonoBehaviour
             
             Manette manTemp = new Manette(Gamepad.current);
             manTemp.Rumble(time, force);
-            StartCoroutine(ShakeCamCor(time, amp, freq));   
-            
+
         }
+        
+        StartCoroutine(ShakeCamCor(time, amp, freq));   
 
     }
 

@@ -5,10 +5,10 @@ using UnityEngine;
 public class PlayerFinder : MonoBehaviour
 {
     // Start is called before the first frame update
-    FollowWaypoints fW;
+    MonsterStateControl mSC;
     void Start()
     {
-        fW = transform.parent.GetComponent<FollowWaypoints>();
+        mSC = transform.parent.parent.GetComponent<MonsterStateControl>();
     }
 
 
@@ -16,7 +16,7 @@ public class PlayerFinder : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            fW.PlayerSeen();
+            mSC.PlayerSeen();
         }
     }
 }

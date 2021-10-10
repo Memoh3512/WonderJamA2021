@@ -6,7 +6,7 @@ public class Waypoint : MonoBehaviour
 {
     public float speed;
 
-    private void Start()
+    private void Awake()
     {
         if(speed == 0)
         {
