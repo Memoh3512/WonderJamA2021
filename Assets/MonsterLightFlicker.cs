@@ -13,6 +13,7 @@ public class MonsterLightFlicker : MonoBehaviour
     private List<GameObject> particleSystems = new List<GameObject>();
     public GameObject parent;
     private Light2D currLight;
+    public bool IsOnBaseValue;
 
     public AudioSource sound;
     
@@ -24,7 +25,7 @@ public class MonsterLightFlicker : MonoBehaviour
         Flash(true);
         foreach (var particleSystem in particleSystems)
         {
-            particleSystem.SetActive(false);
+            particleSystem.SetActive(IsOnBaseValue);
         }
         
     }
@@ -38,7 +39,7 @@ public class MonsterLightFlicker : MonoBehaviour
             {
                 particleSystems.Add(light.transform.GetChild(0).gameObject);
             }
-            light.enabled = false;
+            light.enabled = IsOnBaseValue;
         }
     }
     private bool Flash(bool reset)
@@ -76,10 +77,10 @@ public class MonsterLightFlicker : MonoBehaviour
     private int ToggleOnNewLight()
     {
         int x = Random.Range(0, lights.Count);
-        if (lights[x].enabled == false)
+        if (lights[x].enabled == IsOnBaseValue)
         {
             currLight=lights[x];
-            currLight.enabled = true;
+            currLight.enabled = !IsOnBaseValue;
             if (particleSystems.Count > 0)
             {
                 particleSystems[x].SetActive(true);
@@ -90,7 +91,7 @@ public class MonsterLightFlicker : MonoBehaviour
     }
     private void ToggleOffLight(Light2D light)
     {
-        light.enabled = false;
+        light.enabled = IsOnBaseValue;
         if (sound != null) sound.Pause();
     }
     // Update is called once per frame, penis
