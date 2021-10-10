@@ -42,6 +42,15 @@ public class PlayerControls : MonoBehaviour
     private void FixedUpdate()
     {
         if (!lockMovement) MovePlayer();
+        else
+        {
+
+            Animator animator = GetComponent<Animator>();
+            //animator.SetFloat("X", 0);
+            //animator.SetFloat("Y", 0);
+            animator.SetFloat("magnitude", 0);
+            
+        }
 
     }
 
@@ -55,7 +64,7 @@ public class PlayerControls : MonoBehaviour
         Animator animator = GetComponent<Animator>();
         animator.SetFloat("X", manette.leftStick.x);
         animator.SetFloat("Y", manette.leftStick.y);
-        animator.SetFloat("magnitude", manette.leftStick.normalized.magnitude);
+        animator.SetFloat("magnitude", manette.leftStick.magnitude);
 
     }
 

@@ -32,7 +32,6 @@ public class QTE : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         player = GameObject.FindObjectOfType<PlayerControls>();
         
         switch (boutonToPress)
@@ -93,13 +92,14 @@ public class QTE : MonoBehaviour
         
         while (spamCount > 0)
         {
-            if (button.wasPressedThisFrame)          
-                spamCount--;      
-            else
-                yield return null;
-
-
-
+            if (button.wasPressedThisFrame)
+            {
+                
+                spamCount--;
+                
+            }
+            yield return null;
+            
         }
 
         //end QTE
