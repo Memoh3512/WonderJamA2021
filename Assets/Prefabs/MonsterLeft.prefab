@@ -415,7 +415,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 3
+  m_Radius: 8.15
 --- !u!95 &2161362632429042057
 Animator:
   serializedVersion: 3
@@ -466,6 +466,7 @@ MonoBehaviour:
   timeFlash: 0.25
   often: 75
   parent: {fileID: 7296837894350470960}
+  IsOnBaseValue: 0
   sound: {fileID: 0}
 --- !u!1 &3474777791858591051
 GameObject:
