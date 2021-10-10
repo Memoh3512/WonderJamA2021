@@ -4698,7 +4698,6 @@ GameObject:
   - component: {fileID: 445916452}
   - component: {fileID: 445916454}
   - component: {fileID: 445916453}
-  - component: {fileID: 445916455}
   m_Layer: 5
   m_Name: BG
   m_TagString: Untagged
@@ -4763,25 +4762,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 445916451}
   m_CullTransparentMesh: 1
---- !u!95 &445916455
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 445916451}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b74b3dafaf0f0d24195e36369844defc, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &484640186
 GameObject:
   m_ObjectHideFlags: 0
@@ -7069,12 +7049,12 @@ PrefabInstance:
     - target: {fileID: 3628445149488003348, guid: 3a2537255a65e9d4186434fc107695c6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.69
+      value: -56.83
       objectReference: {fileID: 0}
     - target: {fileID: 3628445149488003348, guid: 3a2537255a65e9d4186434fc107695c6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 30.77
+      value: 1.62
       objectReference: {fileID: 0}
     - target: {fileID: 3628445149488003348, guid: 3a2537255a65e9d4186434fc107695c6,
         type: 3}
