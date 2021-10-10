@@ -24,13 +24,14 @@ public class Tentacle : MonoBehaviour
     {
         ended = true;
 
-        StopCoroutine(Sounds());
+
     }
     IEnumerator Sounds()
     {
         SoundPlayer.instance.PlaySFX(Resources.Load<AudioClip>("Sound/SFX/Jumpscare_V01"), 1);
         yield return new WaitForSeconds(0.25f);
-        SoundPlayer.instance.PlaySFX(Resources.Load<AudioClip>("Sound/SFX/Monster scream_VF"), 1);
+        SoundPlayer.instance.PlaySFX(Resources.Load<AudioClip>("Sound/SFX/Monster scream_VF"), 1);            
+            
     }
     IEnumerator Tentacling()
     {       
