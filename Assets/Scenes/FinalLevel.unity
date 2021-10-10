@@ -278,6 +278,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8050cf1f975aedf4ebd3a01ca9d404cf, type: 3}
+--- !u!114 &50294689 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 522030702, guid: e25694f1fad76f446b89ba2d8c67df8a,
+    type: 3}
+  m_PrefabInstance: {fileID: 513283142}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08f936429e3dc554a8f1100c8d9003cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &113388408
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1041,7 +1053,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 522030702, guid: e25694f1fad76f446b89ba2d8c67df8a, type: 3}
       propertyPath: speed
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 522030702, guid: e25694f1fad76f446b89ba2d8c67df8a, type: 3}
       propertyPath: m_Enabled
@@ -1127,12 +1139,12 @@ PrefabInstance:
     - target: {fileID: 7073326697892920222, guid: e25694f1fad76f446b89ba2d8c67df8a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 74.38012
+      value: 72.8
       objectReference: {fileID: 0}
     - target: {fileID: 7073326697892920222, guid: e25694f1fad76f446b89ba2d8c67df8a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 32.684147
+      value: 26.7
       objectReference: {fileID: 0}
     - target: {fileID: 7073326697892920222, guid: e25694f1fad76f446b89ba2d8c67df8a,
         type: 3}
@@ -1177,7 +1189,7 @@ PrefabInstance:
     - target: {fileID: 7673082954542179772, guid: e25694f1fad76f446b89ba2d8c67df8a,
         type: 3}
       propertyPath: m_Name
-      value: OmegaMonsterJam
+      value: OmegaMonsterJam Start Server
       objectReference: {fileID: 0}
     - target: {fileID: 7673082954542179772, guid: e25694f1fad76f446b89ba2d8c67df8a,
         type: 3}
@@ -3935,7 +3947,47 @@ PrefabInstance:
     - target: {fileID: 210283184754113032, guid: f948e4375ecddf4459aaa61a342784a9,
         type: 3}
       propertyPath: m_Name
-      value: Door (2)
+      value: Door Right
+      objectReference: {fileID: 0}
+    - target: {fileID: 210283184754113034, guid: f948e4375ecddf4459aaa61a342784a9,
+        type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 210283184754113034, guid: f948e4375ecddf4459aaa61a342784a9,
+        type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 210283184754113034, guid: f948e4375ecddf4459aaa61a342784a9,
+        type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 50294689}
+    - target: {fileID: 210283184754113034, guid: f948e4375ecddf4459aaa61a342784a9,
+        type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 210283184754113034, guid: f948e4375ecddf4459aaa61a342784a9,
+        type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: set_enabled
+      objectReference: {fileID: 0}
+    - target: {fileID: 210283184754113034, guid: f948e4375ecddf4459aaa61a342784a9,
+        type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.Behaviour, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 210283184754113034, guid: f948e4375ecddf4459aaa61a342784a9,
+        type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 210283184754113034, guid: f948e4375ecddf4459aaa61a342784a9,
+        type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 210283184754113047, guid: f948e4375ecddf4459aaa61a342784a9,
         type: 3}
@@ -3991,6 +4043,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1062154799390933857, guid: f948e4375ecddf4459aaa61a342784a9,
+        type: 3}
+      propertyPath: m_LightVolumeOpacity
+      value: 0.034
+      objectReference: {fileID: 0}
+    - target: {fileID: 2773819498042030696, guid: f948e4375ecddf4459aaa61a342784a9,
+        type: 3}
+      propertyPath: onOpen.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2773819498042030696, guid: f948e4375ecddf4459aaa61a342784a9,
+        type: 3}
+      propertyPath: onOpen.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2773819498042030696, guid: f948e4375ecddf4459aaa61a342784a9,
+        type: 3}
+      propertyPath: onOpen.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2773819498042030696, guid: f948e4375ecddf4459aaa61a342784a9,
+        type: 3}
+      propertyPath: onOpen.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2773819498042030696, guid: f948e4375ecddf4459aaa61a342784a9,
+        type: 3}
+      propertyPath: onOpen.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2773819498042030696, guid: f948e4375ecddf4459aaa61a342784a9,
+        type: 3}
+      propertyPath: onOpen.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: OpenDoor, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2773819498042030696, guid: f948e4375ecddf4459aaa61a342784a9,
+        type: 3}
+      propertyPath: onOpen.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f948e4375ecddf4459aaa61a342784a9, type: 3}
@@ -4163,7 +4255,7 @@ PrefabInstance:
     - target: {fileID: 7673082954542179772, guid: e25694f1fad76f446b89ba2d8c67df8a,
         type: 3}
       propertyPath: m_Name
-      value: OmegaMonsterJam (1)
+      value: OmegaMonsterJam Bottom Server
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e25694f1fad76f446b89ba2d8c67df8a, type: 3}
@@ -6592,7 +6684,7 @@ PrefabInstance:
     - target: {fileID: 210283184754113032, guid: f948e4375ecddf4459aaa61a342784a9,
         type: 3}
       propertyPath: m_Name
-      value: Door (1)
+      value: Door Left
       objectReference: {fileID: 0}
     - target: {fileID: 210283184754113035, guid: f948e4375ecddf4459aaa61a342784a9,
         type: 3}
