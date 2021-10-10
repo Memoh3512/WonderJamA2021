@@ -93,7 +93,7 @@ public class MonsterLightFlicker : MonoBehaviour
         light.enabled = false;
         if (sound != null) sound.Pause();
     }
-    // Update is called once per frame
+    // Update is called once per frame, penis
     void Update()
     {
         Flash(true);

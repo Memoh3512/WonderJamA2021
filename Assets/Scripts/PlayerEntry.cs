@@ -60,10 +60,9 @@ public class PlayerEntry : MonoBehaviour
                 man.Rumble(0.5f, RumbleForce.Medium);
                 PlayerInputs.AddPlayerController(man);
                 
-                //press begin start game
-                //TODO HERE
-                Debug.Log("START GAME");
-                SceneChanger.ChangeScene(SceneTypes.GameplayScene, TransitionTypes.CrossFade);
+                //Debug.Log("START GAME");
+                SoundPlayer.instance.PlaySFX(Resources.Load<AudioClip>("Sound/SFX/Press button_VF"), 0.7f);
+                SceneChanger.ChangeScene(SceneTypes.GameOver, TransitionTypes.CrossFade);
                 
             }
             
