@@ -5,13 +5,14 @@ using UnityEngine.Experimental.Rendering.Universal;
 
 public class MonsterLightFlicker : MonoBehaviour
 {
-    public float timeFlash;
+    public float timeFlash=0.25f;
     [Range(0.0f,200.0f)]
     public float often = 100;
     [Range(0.5f,2.0f)]
-    public float oftenMod = 0.5f;
+    public float oftenMod = 0.9f;
     private List<Light2D> lights = new List<Light2D>();
     private List<float> timeLeftFlash = new List<float>();
+    private List<GameObject> particleSystems = new List<GameObject>();
     public GameObject parent;
     private Light2D currLight;
 
@@ -23,6 +24,10 @@ public class MonsterLightFlicker : MonoBehaviour
     {
         GetAllLights();
         Flash(true);
+        foreach (var particleSystem in particleSystems)
+        {
+            particleSystem.SetActive(false);
+        }
         
     }
     private void GetAllLights()
@@ -31,6 +36,10 @@ public class MonsterLightFlicker : MonoBehaviour
         {
             lights.Add(light);
             timeLeftFlash.Add(0f);
+            if (light.transform.childCount > 0)
+            {
+                particleSystems.Add(light.transform.GetChild(0).gameObject);
+            }
             light.enabled = false;
         }
     }
@@ -51,12 +60,16 @@ public class MonsterLightFlicker : MonoBehaviour
                     if (timeLeftFlash[i] <= 0)
                     {
                         ToggleOffLight(lights[i]);
+                        if (particleSystems.Count > 0)
+                        {
+                            particleSystems[i].SetActive(false);
+                        }
+                        
                         timeLeftFlash[i] = 0;
                     }
 
                     return true;
-                }
-                else if (timeLeftFlash[i] > 0)
+                }else if (timeLeftFlash[i] > 0)
                     return true;
             }
         }
@@ -68,7 +81,11 @@ public class MonsterLightFlicker : MonoBehaviour
         if (lights[x].enabled == false)
         {
             currLight=lights[x];
-            currLight.enabled=true;
+            currLight.enabled = true;
+            if (particleSystems.Count > 0)
+            {
+                particleSystems[x].SetActive(true);
+            }
             if (sound != null) sound.UnPause();
         }
         return x;
