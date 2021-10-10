@@ -1115,7 +1115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 173392049}
   - component: {fileID: 173392050}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: server
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7422,7 +7422,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 451402377}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.45, y: 11.96, z: -10}
+  m_LocalPosition: {x: 72.7, y: 9.08, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -14774,7 +14774,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 783365527}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.45, y: 11.96, z: -10}
+  m_LocalPosition: {x: 72.7, y: 9.08, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 817817118}
@@ -37290,7 +37290,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1449531485}
   - component: {fileID: 1449531486}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: server
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43959,6 +43959,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 288580241, guid: 2c2bad59297c18047b828e7ce87b43c2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4400072479116033931, guid: 2c2bad59297c18047b828e7ce87b43c2,
         type: 3}
       propertyPath: m_RootOrder
@@ -43967,12 +43971,12 @@ PrefabInstance:
     - target: {fileID: 4400072479116033931, guid: 2c2bad59297c18047b828e7ce87b43c2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.45
+      value: 72.7
       objectReference: {fileID: 0}
     - target: {fileID: 4400072479116033931, guid: 2c2bad59297c18047b828e7ce87b43c2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.96
+      value: 9.08
       objectReference: {fileID: 0}
     - target: {fileID: 4400072479116033931, guid: 2c2bad59297c18047b828e7ce87b43c2,
         type: 3}
@@ -44018,6 +44022,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011906022637059942, guid: 2c2bad59297c18047b828e7ce87b43c2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c2bad59297c18047b828e7ce87b43c2, type: 3}
@@ -49584,7 +49593,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1894064826}
   - component: {fileID: 1894064825}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}

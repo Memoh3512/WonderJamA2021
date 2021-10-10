@@ -102,6 +102,7 @@ public class MonsterStateControl : MonoBehaviour
     {
     
             target = GameObject.FindGameObjectWithTag("Player").transform;
+            playerFound = true;
             speed = baseSpeed*2;
        
     }
