@@ -70,6 +70,7 @@ public class PlayerControls : MonoBehaviour
     {
         
         SoundPlayer.instance.PlaySFX(stepSound, 0.15f);
+        manette.Rumble(0.2f, RumbleForce.VeryWeak);
         
     }
     
