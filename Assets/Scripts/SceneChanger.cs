@@ -11,6 +11,7 @@ public enum SceneTypes
     GameOver = 2,
     IntroCutscene = 3,
     FinalLevel = 4,
+    Win = 5,
     
 }
 

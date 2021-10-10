@@ -46,7 +46,7 @@ public class Interactable : MonoBehaviour
 
                 ply.GetComponent<PlayerControls>().lockMovement = true;
                 onInteract.Invoke(ply);
-                Debug.Log("INTERACTED!!!!");
+                //Debug.Log("INTERACTED!!!!");
                 
             }
             
