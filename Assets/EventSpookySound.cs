@@ -10,15 +10,25 @@ public class EventSpookySound : MonoBehaviour
 
     public void PlayEvent()
     {
-        
-        
-        
+
+        StartCoroutine(Play());
+
     }
     
     private IEnumerator Play()
     {
 
-        yield return null;
+        SoundPlayer.instance.PlaySFX(sfx1);
+        yield return new WaitForSeconds(0.2f);
+        SoundPlayer.instance.PlaySFX(sfx2, 0.5f);
+        yield return new WaitForSeconds(0.5f);
+        SoundPlayer.instance.PlaySFX(sfx2, 0.5f);
+        yield return new WaitForSeconds(0.5f);
+        SoundPlayer.instance.PlaySFX(sfx2, 0.5f);
+        yield return new WaitForSeconds(0.5f);
+        SoundPlayer.instance.PlaySFX(sfx2, 0.5f);
+        yield return new WaitForSeconds(0.5f);
+        SoundPlayer.instance.PlaySFX(sfx2, 0.5f);
 
     }
     
