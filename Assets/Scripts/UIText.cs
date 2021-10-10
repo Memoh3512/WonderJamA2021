@@ -7,6 +7,7 @@ public class UIText : MonoBehaviour
 {
 
     public TextMeshProUGUI text;
+    public bool showOnStart = false;
 
     public AudioClip displaySFX;
     // Start is called before the first frame update
@@ -14,7 +15,10 @@ public class UIText : MonoBehaviour
     {
 
         text.color = new Color(text.color.r, text.color.g, text.color.b, 0);
-
+        if (showOnStart)
+        {
+            DisplayText(text.text);
+        }
     }
 
     public void DisplayText(string displayText, float nbSecs = 2f, bool playSound = true)

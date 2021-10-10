@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class FallEvent2 : MonoBehaviour
 {
+    
+    private bool eventEnded;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,14 +23,20 @@ public class FallEvent2 : MonoBehaviour
     {
 
         player.GetComponent<PlayerControls>().lockMovement = true;
+        GameObject.Find("Tentacule1").GetComponent<Tentacle>().Startacle();
 
     }
+
+    
+
+    
 
     public void EndEvent()
     {
 
+        GameObject.Find("Tentacule1").GetComponent<Tentacle>().Endtacle();
+        eventEnded = true;
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>().lockMovement = false;
-        GameObject.FindObjectOfType<CinemachineVirtualCamera>().m_Lens.OrthographicSize = 7;
         Destroy(gameObject);
 
     }

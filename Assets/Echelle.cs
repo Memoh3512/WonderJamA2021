@@ -17,6 +17,6 @@ public class Echelle : MonoBehaviour
     }
     public void NextLevel()
     {
-        //SceneChanger.ChangeScene();
+        SceneChanger.ChangeScene(SceneTypes.FinalLevel);
     }
 }

@@ -11,6 +11,7 @@ public class Crack : MonoBehaviour
     public GameObject pressA;
     public GameObject canvas;
     private PlayerControls pC;
+    public GameObject monsterReal;
 
     public float monsterOffset;
     // Start is called before the first frame update
@@ -89,13 +90,15 @@ public class Crack : MonoBehaviour
         canvas.SetActive(false);
         if (monster.transform.position.x < -23f)
         {
-            SoundPlayer.instance.PlaySFX(Resources.Load<AudioClip>("Sound/SFX/FitCrack"), 1);
-            FindObjectOfType<CinemachineVirtualCamera>().GetComponent<CameraShake>().ShakeCam(1f, 5f, 5f, RumbleForce.Weak);
+           
             yield return new WaitForSeconds(2f);         
             StartCoroutine(GameOver());
         }
         else
         {
+            monsterReal.SetActive(false);
+            SoundPlayer.instance.PlaySFX(Resources.Load<AudioClip>("Sound/SFX/FitCrack"), 1);
+            FindObjectOfType<CinemachineVirtualCamera>().GetComponent<CameraShake>().ShakeCam(1f, 5f, 5f, RumbleForce.Weak);
             pC.gameObject.transform.position += 7*Vector3.right ;
             crack.transform.position += 7 * Vector3.right;
             fond.transform.position += 7 * Vector3.right;
@@ -129,8 +132,8 @@ public class Crack : MonoBehaviour
         crack.SetActive(false);
         fond.SetActive(false);
         pC.lockMovement = false;
-
         
+
 
     }
 

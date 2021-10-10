@@ -80,6 +80,8 @@ public class FallEvent : MonoBehaviour
         
         SoundPlayer.instance.SetMusic(Songs.Gouttes);
 
+        player.GetComponent<PlayerControls>().stepSound = Resources.Load<AudioClip>("Sound/SFX/Pas wet_VF");
+        
         //fade in
         while (fadeOut.alpha > 0f)
         {
