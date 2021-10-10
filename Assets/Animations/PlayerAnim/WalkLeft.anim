@@ -17,21 +17,51 @@ AnimationClip:
   m_PositionCurves: []
   m_ScaleCurves: []
   m_FloatCurves: []
-  m_PPtrCurves: []
+  m_PPtrCurves:
+  - curve:
+    - time: 0
+      value: {fileID: 21300000, guid: 6025c21ee75305644b43e3d758e79246, type: 3}
+    - time: 0.083333336
+      value: {fileID: 21300000, guid: 69f40d54aa4ba424193762e43d8e50e6, type: 3}
+    - time: 0.11666667
+      value: {fileID: 21300000, guid: ad26969850d44654099cbc1fa1749386, type: 3}
+    - time: 0.2
+      value: {fileID: 21300000, guid: 8a05022da706c64459d7f5c192cff345, type: 3}
+    - time: 0.26666668
+      value: {fileID: 21300000, guid: 6c7c850155b027042b9fba063b1d2835, type: 3}
+    - time: 0.35
+      value: {fileID: 21300000, guid: b9ff26471898a6c458f8c4b0cbedbe89, type: 3}
+    attribute: m_Sprite
+    path: 
+    classID: 212
+    script: {fileID: 0}
   m_SampleRate: 60
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   m_ClipBindingConstant:
-    genericBindings: []
-    pptrCurveMapping: []
+    genericBindings:
+    - serializedVersion: 2
+      path: 0
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+    pptrCurveMapping:
+    - {fileID: 21300000, guid: 6025c21ee75305644b43e3d758e79246, type: 3}
+    - {fileID: 21300000, guid: 69f40d54aa4ba424193762e43d8e50e6, type: 3}
+    - {fileID: 21300000, guid: ad26969850d44654099cbc1fa1749386, type: 3}
+    - {fileID: 21300000, guid: 8a05022da706c64459d7f5c192cff345, type: 3}
+    - {fileID: 21300000, guid: 6c7c850155b027042b9fba063b1d2835, type: 3}
+    - {fileID: 21300000, guid: b9ff26471898a6c458f8c4b0cbedbe89, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1
+    m_StopTime: 0.36666667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -50,4 +80,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.26666668
+    functionName: PlayStepSound
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

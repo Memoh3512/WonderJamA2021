@@ -16,6 +16,8 @@ public class PlayerControls : MonoBehaviour
 
     public AudioClip stepSound;
 
+    private bool halfStep = false;
+    
     private void Awake()
     {
         
@@ -77,10 +79,22 @@ public class PlayerControls : MonoBehaviour
 
     public void PlayStepSound()
     {
-        
-        SoundPlayer.instance.PlaySFX(stepSound, 0.15f);
-        manette.Rumble(0.2f, RumbleForce.VeryWeak);
-        
+
+        if (manette.leftStick.x != 0 && manette.leftStick.y != 0)
+        {
+
+            halfStep = !halfStep;
+            if (halfStep) SoundPlayer.instance.PlaySFX(stepSound, 0.15f);
+
+        }
+        else
+        {
+            
+            SoundPlayer.instance.PlaySFX(stepSound, 0.15f);
+            //manette.Rumble(0.2f, RumbleForce.VeryWeak);   
+            
+        }
+
     }
     
 }
