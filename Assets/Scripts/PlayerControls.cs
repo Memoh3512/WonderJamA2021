@@ -48,6 +48,12 @@ public class PlayerControls : MonoBehaviour
         
         var position = transform.position;
         rb.MovePosition(new Vector2(position.x,position.y)+(manette.leftStick * (Time.deltaTime * speed)));
+        
+        //anim parameters
+        Animator animator = GetComponent<Animator>();
+        animator.SetFloat("X", manette.leftStick.x);
+        animator.SetFloat("Y", manette.leftStick.y);
+        animator.SetFloat("magnitude", manette.leftStick.normalized.magnitude);
 
     }
 
