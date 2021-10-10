@@ -23,9 +23,10 @@ public class Door : MonoBehaviour
         else
         {
             DoorLockedText();
+            player.GetComponent<PlayerControls>().lockMovement = false;
         }
 
-        //player.GetComponent<PlayerControls>().lockMovement = false;
+       
     }
 
     void OpenDoor(GameObject player)
