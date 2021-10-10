@@ -16,9 +16,12 @@ public class MonsterStateControl : MonoBehaviour
     private Transform target;
     private float lookOffset;
     private bool flipped;
+    private bool playerFound;
+    private float baseSpeed;
 
     private void Start()
     {
+        baseSpeed = speed;
         GetAllWaypoints();
         GetNextTarget();
         
@@ -72,7 +75,10 @@ public class MonsterStateControl : MonoBehaviour
 
         if (Vector2.Distance(transform.position, target.position) < 0.05f)
         {
-
+            if (playerFound)
+            {
+                SceneChanger.GameOver();
+            }
             GetNextTarget();
         }
 
@@ -82,6 +88,7 @@ public class MonsterStateControl : MonoBehaviour
     {
     
             target = GameObject.FindGameObjectWithTag("Player").transform;
+        speed = baseSpeed*2;
        
     }
 
